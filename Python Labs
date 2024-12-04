@@ -1,0 +1,1583 @@
+
+def menu():
+    print("1)add")
+    print("2)sub")
+    print("3)multi")
+    print("4)divide")
+    print("5)modolus")
+
+
+
+def add(x,y):
+    return x+y
+
+def sub(x,y):
+    return x-y
+
+def multi(x,y):
+    return x*y
+
+def divide(x,y):
+    return x/y
+
+def modolus(x,y):
+    return x%y
+
+def compare(z, result):
+    if z > result:
+        print("The entered number is greater than the result.")
+    elif z < result:
+        print("The entered number is less than the result.")
+
+def calculator():
+    x = int(input("enter num 1 :"))
+    y = int(input("enter num 2 :"))
+
+    result = 10
+
+    menu()
+    choice = int(input("enter choice"))
+
+    match choice:
+        case 1:
+            print("result",add(x,y))
+            result = add(x,y)
+        case 2:
+            print("result",sub(x,y))
+
+        case 3:
+            print("result",multi(x,y))
+            result = multi(x,y)
+        case 4:
+            print("result",divide(x,y))
+            result = divide(x,y)
+        case 5:
+            print("result",modolus(x,y))
+            result = modolus(x,y)
+        case _:
+            print("invalid")
+
+    user_input = input("Do you want to continue? (yes/no): ")
+
+    if user_input.lower() == "yes":
+        z = int(input("Enter number to check: "))
+        compare(z, result)
+    else:
+        print("Bye")
+
+
+calculator()
+
+
+
+DSA = []
+AI =[]
+AL = []
+DS = []
+def menu():
+    condition = True
+    while condition:
+        print(" ** Course Registration System  **")
+        print("1) Enroll")
+        print("2) Drop")
+        print("3) Search")
+        print("4) View All")
+        print("5) Sort")
+        print("6) Exit")
+        choice = int(input("Enter a choice: "))
+        match choice:
+            case 1:
+                enroll()
+            case 2:
+                drop()
+            case 3:
+                search()
+            case 4:
+                view()
+            case 5:
+                sort()
+            case 6:
+                condition = False
+                print("Exiting the system.")
+            case _:
+                print("Invalid ...................")
+def course():
+    print("** Courses Available **")
+    print("1) DSA ")
+    print("2) AI")
+    print("3) AL")
+    print("4) DS")
+def Sorting_method():
+    print("  * Sorting Menu *")
+    print("1) Ascending")
+    print("2) Decending")
+def enroll():
+    course();
+    choice = int(input("Enter a choice : "))
+    size = int(input("Enter number of student you want to enroll : "))
+    match choice:
+            case 1:
+                course_list = DSA
+            case 2:
+                course_list = AI
+            case 3:
+                course_list = AL
+            case 4 :
+                course_list = DS
+    for i in range(size):
+        S_name = input("Enter name : ")
+        course_list.append(S_name)
+def drop():
+    course();
+    choice = int(input("Enter a choice : "))
+    match choice:
+            case 1:
+                course_list = DSA
+            case 2:
+                course_list = AI
+            case 3:
+                course_list = AL
+            case 4 :
+                course_list = DS
+    S_name = input("Enter name to remove : ")
+    if S_name in course_list:
+        course_list.remove(S_name)
+    else:
+        print("no student found")
+def search():
+    print("** Search for a Student **")
+S_name = input("Enter the student's name to search: ")
+    found = False
+    if S_name in DSA:
+        print("This student is studying DSA")
+        found = True
+    if S_name in AI:
+        print("This student is studying AI")
+        found = True
+    if S_name in AL:
+        print("This student is studying AL")
+        found = True
+    if S_name in DS:
+        print("This student is studying DS")
+        found = True
+    if not found:
+        print("Student is not enrolled in any courses.")
+def view():
+    course();
+    choice = int(input("Enter a choice : "))
+    match choice:
+            case 1:
+                course_list = DSA
+            case 2:
+                course_list = AI
+            case 3:
+                course_list = AL
+            case 4 :
+                course_list = DS
+    if course_list:
+        print("* Students *")
+        for i in course_list:
+            print(i)
+    else:
+        print("Nobody")
+def sort():
+
+    course();
+    choice = int(input("Enter a choice : "))
+
+    match choice:
+            case 1:
+                course_list = DSA
+            case 2:
+                course_list = AI
+            case 3:
+                course_list = AL
+            case 4 :
+                course_list = DD
+
+
+    Sorting_method()
+    choice  = int(input("Enter a choice :"))
+    match choice:
+        case 1:
+            course_list.sort()
+            print("Sorted in Ascending order:")
+        case 2:
+            course_list.sort(reverse=True)
+            print("Sorted in Descending order:")
+
+
+
+    if course_list:
+        for student in course_list:
+            print(student)
+    else:
+        print("No students to display.")
+
+             # Main
+menu()
+
+
+
+
+import numpy as np
+Array = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+print("    Displaying a 3D Array")
+print(Array)
+print("    Iterating the above 3D Array")
+for x in Array:
+    for y in x:
+        for z in y:
+            print(z)
+import numpy as np
+print("\n")
+print("*******************************************")
+print("              Types of Array")
+array_1d = np.array([1, 2, 3, 4, 5])
+array_2d = np.array([[1, 2], [3, 4], [5, 6]])
+array_3d = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+print("1D Array:")
+print(array_1d)
+print("\n2D Array:")
+print(array_2d)
+print("\n3D Array:")
+print(array_3d)
+print("*******************************************")
+print("\n")
+print("*******************************************")
+print("              Array Properties")
+print("\nShape of 2D Array:", array_2d.shape)
+print("Number of Dimensions of 3D Array:", array_3d.ndim)
+print("Size of 1D Array:", array_1d.size)
+print("*******************************************")
+print("\n")
+print("*******************************************")
+print("              Array Reshaping")
+reshaped_array = array_2d.reshape(2, 3)
+print("\nReshaped 2D Array (to shape (2, 3)):")
+print(reshaped_array)
+print("*******************************************")
+print("\n")
+print("*******************************************")
+print("              Mathematical Operations")
+array_a = np.array([1, 2, 3])
+array_b = np.array([4, 5, 6])
+print("\nElement-wise Addition:")
+print(array_a + array_b)
+print("\nElement-wise Multiplication:")
+print(array_a * array_b)
+print("*******************************************")
+print("\n")
+print("*******************************************")
+print("              Statistical Functions")
+print("\nMean of array_a:", np.mean(array_a))
+print("Standard Deviation of array_a:", np.std(array_a))
+print("Sum of elements in array_a:", np.sum(array_a))
+print("*******************************************")
+print("\n")
+print("*******************************************")
+print("               Indexing and Slicing")
+print("\nSlicing 1D Array (first 3 elements):", array_1d[:3])
+print("Slicing 2D Array (first row):", array_2d[0])
+print("*******************************************")
+
+
+
+
+
+
+
+
+
+
+import numpy as np
+
+
+print(" *******************************************")
+print("              Simple NumPy Array")
+Array = np.array([1, 2, 3, 4, 5, 6,7])
+print( "               " ,Array)
+print(" *******************************************")
+print("\n")
+
+print(" *******************************************")
+print("   Simpliting NumPy Array into 3 Arrays")
+New_Array = np.array_split(Array, 3)
+print(New_Array)
+print(" *******************************************")
+
+
+print(" *******************************************")
+print("   Summation of the above 3 Arrays")
+Summation = np.sum([New_Array[0],New_Array[1],New_Array[2]])
+print (  "            ",Summation)
+print(" *******************************************")
+
+
+
+
+
+
+
+
+
+import numpy as np
+
+
+print(" *******************************************")
+print("                Simple Array ")
+Array = np.array([5,23,13,11,9,7,2,1,0,8,10])
+print("        ",Array)
+print(" *******************************************")
+
+
+print("\n")
+print(" *******************************************************")
+
+print("  Extracting numbers greater than 5 and less than 15 ")
+
+filterd_Array = []
+
+for x in Array:
+    if x > 5 and x<15:
+        filterd_Array.append(True)
+    else:
+         filterd_Array.append(False)
+
+New_Array = Array[filterd_Array]
+
+print("        ",New_Array)
+
+print(" *******************************************************")
+
+
+
+
+
+
+
+
+
+print("***********************************************")
+print("  Even numbers 0-10  using a constructor")
+set1 = set(range(0, 11, 2))
+print(" swt 1    ",set1)
+print("***********************************************")
+
+
+print("\n")
+
+print("********************************************************")
+print("  Positive integers 1-10  without using a constructor")
+set2 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+print("     ",set2)
+print("********************************************************")
+
+
+print("\n")
+
+print("********************************************************************")
+print("  Positive integers 1-10 after removal ofsecond and fifth element  ")
+set2_list = list(set2)
+set2_list.pop(1)
+set2_list.pop(3)
+print("          ",set2_list)
+print("********************************************************************")
+
+
+print("\n")
+
+print("***********************************************")
+print("  Intersection of set 1 and set 2")
+set2 = set(set2_list)
+set3 = set1.intersection(set2)
+print("   ",set3)
+print("***********************************************")
+
+
+
+
+
+Students = {
+    56614: {"Name": "Kaleem", "Age": 19, "Semester": "Six"},
+    57362: {"Name": "Anas", "Age": 19, "Semester": "Six"},
+    53530: {"Name": "Arbaz", "Age": 21, "Semester": "Six"},
+    53098: {"Name": "Israr", "Age": 21, "Semester": "Six"},
+    56720: {"Name": "Haseeb", "Age": 20, "Semester": "Six"},
+}
+
+
+for student in Students.values():
+    if student["Semester"] == "Six":
+        student["Semester"] = "Seven"
+
+print("******************************************************")
+print("           Updated Student Records:")
+print("******************************************************")
+for sapId, record in Students.items():
+    print(f"SAP ID: {sapId}, Name: {record['Name']}, Age: {record['Age']}, Semester: {record['Semester']}")
+print("******************************************************")
+
+
+
+
+print("***********************************************")
+print("  Even numbers 0-10  using a constructor")
+set1 = set(range(0, 11, 2))
+print(" swt 1    ",set1)
+print("***********************************************")
+
+
+print("\n")
+
+print("********************************************************")
+print("  Positive integers 1-10  without using a constructor")
+set2 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+print("     ",set2)
+print("********************************************************")
+
+
+print("\n")
+
+print("********************************************************************")
+print("  Positive integers 1-10 after removal ofsecond and fifth element  ")
+set2_list = list(set2)
+set2_list.pop(1)
+set2_list.pop(3)
+print("          ",set2_list)
+print("********************************************************************")
+
+
+print("\n")
+
+
+
+
+
+
+print("***********************************************")
+print("  Even numbers 0-10  using a constructor")
+set1 = set(range(0, 11, 2))
+print(" swt 1    ",set1)
+print("***********************************************")
+
+
+print("\n")
+
+print("********************************************************")
+print("  Positive integers 1-10  without using a constructor")
+set2 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+print("     ",set2)
+print("********************************************************")
+
+
+print("\n")
+
+print("********************************************************************")
+print("  Positive integers 1-10 after removal ofsecond and fifth element  ")
+set2_list = list(set2)
+set2_list.pop(1)
+set2_list.pop(3)
+print("          ",set2_list)
+print("********************************************************************")
+
+
+print("\n")
+
+print("***********************************************")
+print("  Intersection of set 1 and set 2")
+set2 = set(set2_list)
+set3 = set1.intersection(set2)
+print("   ",set3)
+print("***********************************************")
+
+import numpy as np
+
+
+print(" *******************************************")
+print("                Simple Array ")
+Array = np.array([5,23,13,11,9,7,2,1,0,8,10])
+print("        ",Array)
+print(" *******************************************")
+
+
+print("\n")
+print(" *******************************************************")
+
+print("  Extracting numbers greater than 5 and less than 15 ")
+
+filterd_Array = []
+
+for x in Array:
+    if x > 5 and x<15:
+        filterd_Array.append(True)
+    else:
+         filterd_Array.append(False)
+
+New_Array = Array[filterd_Array]
+
+print("        ",New_Array)
+
+print(" *******************************************************")
+
+
+
+
+#Q1
+#Code:
+def dfs(node, graph, visited, component):
+    component.append(node)
+    visited[node] = True
+
+    for child in graph[node]:
+        if not visited[child]:
+            dfs(child, graph, visited, component)  # Use child for recursion
+
+# Function to perform DFS and print the traversal
+def perform_dfs(graph, start_node):
+    visited = [False] * len(graph)  # Initialize visited list
+    component = []
+    dfs(start_node, graph, visited, component)
+    return component
+
+# Initial graph
+graph = {
+    0: [2],
+    1: [2, 3],
+    2: [0, 1, 4],
+    3: [1, 4],
+    4: [2, 3]
+}
+
+# Perform DFS on the initial graph
+print("Initial graph DFS starting from node 0:")
+initial_dfs = perform_dfs(graph, 0)
+print("Following is the Depth First Search:", initial_dfs)
+
+
+# Adding an edge between 3 and 0
+graph[3].append(0)
+graph[0].append(3)
+
+# Removing an edge between 1 and 2
+graph[1].remove(2)
+graph[2].remove(1)  # Undirected graph: remove edge in both directions
+
+# Perform DFS on the modified graph
+print("\nModified graph DFS starting from node 0:")
+modified_dfs = perform_dfs(graph, 0)
+print("Following is the Depth First Search:", modified_dfs)
+
+#Q2
+#Code:
+def dfs_iterative(start_node, graph):
+    visited = [False] * len(graph)  # Initialize visited list
+    component = []
+    stack = [start_node]  # Initialize stack with the starting node
+
+    while stack:
+        node = stack.pop()  # Get the last node added to the stack
+        if not visited[node]:
+            visited[node] = True  # Mark it as visited
+            component.append(node)  # Add to the component list
+
+            # Add all unvisited neighbors to the stack
+            for child in reversed(graph[node]):  # Reverse to maintain order
+                if not visited[child]:
+                    stack.append(child)
+
+    return component
+
+# Main
+graph = {
+    0: [2],
+    1: [2, 3],
+    2: [0, 1, 4],
+    3: [1, 4],
+    4: [2, 3]
+}
+
+# Perform DFS iteratively
+node = 0
+result = dfs_iterative(node, graph)
+print("Following is the Depth First Search:", result)
+
+Output:
+
+
+
+
+#Q3
+#Code:
+def dfs(node, graph, visited, component):
+    component.append(node)
+    visited[node] = True
+
+    for child in graph[node]:
+        if not visited[child]:
+            dfs(child, graph, visited, component)  # Use child for recursion
+
+def count_connected_components(graph):
+    visited = [False] * len(graph)  # Initialize visited list
+    components = []
+
+    for node in graph:
+        if not visited[node]:
+            component = []
+            dfs(node, graph, visited, component)
+            components.append(component)
+
+    return len(components), components
+
+# Initial graph
+graph = {
+    0: [2],
+    1: [2, 3],
+    2: [0, 1, 4],
+    3: [1, 4],
+    4: [2, 3]
+}
+
+# Counting connected components in the initial graph
+num_components, components = count_connected_components(graph)
+print(f"Number of connected components: {num_components}")
+print("Components:", components)
+
+
+
+
+#Q4
+#Code:
+def dfs(node, graph, visited):
+    # Mark the node as visited
+    visited[node] = True
+    print(f"Node {node} -> Adjacent: {graph[node]}")
+
+    # Traverse through all adjacent nodes (children)
+    for child in graph[node]:
+        if not visited[child]:
+            dfs(child, graph, visited)
+
+def perform_dfs(graph):
+    visited = [False] * len(graph)  # Initialize visited list for all nodes
+
+    # Start DFS from the first node (assuming node 0)
+    for node in graph:
+        if not visited[node]:
+            print(f"\nStarting DFS from node {node}")
+            dfs(node, graph, visited)
+
+# Initial graph (based on the image you uploaded)
+graph = {
+    0: [1, 2],
+    1: [0],
+    2: [0, 3, 4],
+    3: [2],
+    4: [2]
+}
+
+# Perform DFS and print traversal details
+perform_dfs(graph)
+
+
+#Q5
+#Code:
+def bfs_recursive(graph, level, visited, bfs_result):
+    next_level = []
+
+    # Visit all nodes in the current level
+    for node in level:
+        if not visited[node]:
+            visited[node] = True
+            bfs_result.append(node)
+
+            # Collect all unvisited neighbors for the next level
+            for neighbor in graph[node]:
+                if not visited[neighbor]:
+                    next_level.append(neighbor)
+
+    # If the next level has nodes to visit, call bfs_recursive for the next level
+    if next_level:
+        bfs_recursive(graph, next_level, visited, bfs_result)
+
+def bfs(start_node, graph):
+    visited = [False] * len(graph)  # Initialize visited list
+    bfs_result = []  # To store the BFS traversal order
+
+    # Start BFS from the start node
+    bfs_recursive(graph, [start_node], visited, bfs_result)
+
+    return bfs_result
+
+# Initial graph
+graph = {
+    0: [2],
+    1: [2, 3],
+    2: [0, 1, 4],
+    3: [1, 4],
+    4: [2, 3]
+}
+
+# Perform BFS on the  graph
+print("Initial graph BFS starting from node 0:")
+initial_bfs = bfs(0, graph)
+print("Following is the Breadth First Search:", initial_bfs)
+
+
+#Q1
+#Code:
+from copy import deepcopy
+import numpy as np
+import time
+
+def bestsolution(state):
+    bestsol = np.array([], int).reshape(-1, 9)
+    count = len(state) - 1
+    while count != -1:
+        bestsol = np.insert(bestsol, 0, state[count]['puzzle'], 0)
+        count = (state[count]['parent'])
+    return bestsol.reshape(-1, 3, 3)
+
+# Checks for the uniqueness of the iteration(it).
+def all(checkarray):
+    set=[]
+    for it in set:
+        for checkarray in it:
+            return 1
+        else:
+            return 0
+
+# Number of misplaced tiles
+def misplaced_tiles(puzzle, goal):
+    mscost = np.sum(puzzle != goal) - 1
+    return mscost if mscost > 0 else 0
+
+def coordinates(puzzle):
+    pos = np.array(range(9))
+    for p, q in enumerate(puzzle):
+        pos[q] = p
+    return pos
+
+# Start of puzzle evaluation, using Misplaced tiles heuristics
+def evaluate_misplaced(puzzle, goal):
+    steps = np.array([
+        ('up', [0, 1, 2], -3),
+        ('down', [6, 7, 8],  3),
+        ('left', [0, 3, 6], -1),
+        ('right', [2, 5, 8],  1)
+    ], dtype=[('move', str, 1), ('position', list), ('head', int)])
+
+    dtstate = [('puzzle', list), ('parent', int), ('gn', int), ('hn', int)]
+    costg = coordinates(goal)
+
+    # Initializing the parent, gn and hn, where hn is misplaced_tiles function call
+    parent = -1
+    gn = 0
+    hn = misplaced_tiles(coordinates(puzzle), costg)
+    state = np.array([(puzzle, parent, gn, hn)], dtstate)
+
+    # Priority queues with position as keys and fn as value.
+    dtpriority = [('position', int), ('fn', int)]
+    priority = np.array([(0, hn)], dtpriority)
+
+    while True:
+        priority = np.sort(priority, kind='mergesort', order=['fn', 'position'])
+        position, fn = priority[0]
+        # Sort priority queue using merge sort, the first element is picked for exploring.
+        priority = np.delete(priority, 0, 0)
+
+        puzzle, parent, gn, hn = state[position]
+        puzzle = np.array(puzzle)
+
+        blank = int(np.where(puzzle == 0)[0])
+        gn += 1
+        c = 1
+        start_time = time.time()
+
+        for s in steps:
+            c += 1
+            if blank not in s['position']:
+                openstates = deepcopy(puzzle)
+                openstates[blank], openstates[blank + s['head']] = openstates[blank + s['head']], openstates[blank]
+
+                if ~(np.all(list(state['puzzle']) == openstates, 1)).any():
+                    end_time = time.time()
+                    if (end_time - start_time) > 2:
+                        print(" The puzzle is unsolvable \n")
+                        break
+
+                    hn = misplaced_tiles(coordinates(openstates), costg)
+                    # Generate and add new state in the list
+                    q = np.array([(openstates, position, gn, hn)], dtstate)
+                    state = np.append(state, q, 0)
+                    # f(n) is the sum of cost to reach node
+                    fn = gn + hn
+                    q = np.array([(len(state) - 1, fn)], dtpriority)
+                    priority = np.append(priority, q, 0)
+
+                    if np.array_equal(openstates, goal):
+                        print(' The puzzle is solvable \n')
+                        return state, len(priority)
+
+    return state, len(priority)
+
+# Updated initial state using append method
+puzzle = []
+puzzle.append(1)
+puzzle.append(2)
+puzzle.append(3)
+puzzle.append(4)
+puzzle.append(0)
+puzzle.append(5)
+puzzle.append(7)
+puzzle.append(8)
+puzzle.append(6)
+
+# Updated goal state using append method
+goal = []
+goal.append(1)
+goal.append(2)
+goal.append(3)
+goal.append(4)
+goal.append(5)
+goal.append(0)
+goal.append(7)
+goal.append(8)
+goal.append(6)
+
+state, visited = evaluate_misplaced(puzzle, goal)
+bestpath = bestsolution(state)
+print(str(bestpath).replace('[', ' ').replace(']', ''))
+totalmoves = len(bestpath) - 1
+print('\nSteps to reach goal:', totalmoves)
+visit = len(state) - visited
+print('Total nodes visited: ', visit, "\n")
+
+#Q2
+#Code:
+import heapq
+
+class Node:
+    def __init__(self, name, g=0, h=0):
+        self.name = name  # Name of the node
+        self.g = g        # Cost from start node
+        self.h = h        # Heuristic cost to goal
+        self.f = g + h    # Total cost
+
+    def __lt__(self, other):
+        return self.f < other.f  # For priority queue comparison
+
+def heuristic(node, goal):
+    # For simplicity, the heuristic is defined as the absolute difference
+    # between the node name (assumed to be an integer) and goal.
+    return abs(goal - node)
+
+def a_star(graph, start, goal):
+    open_list = []
+    closed_set = set()
+
+    start_node = Node(start, 0, heuristic(start, goal))
+    heapq.heappush(open_list, start_node)
+
+    came_from = {}
+    g_costs = {start: 0}
+
+    while open_list:
+        current_node = heapq.heappop(open_list)
+
+        if current_node.name == goal:
+            # Reconstruct path
+            path = []
+            while current_node.name in came_from:
+                path.append(current_node.name)
+                current_node = came_from[current_node.name]
+            path.append(start)
+            return path[::-1]  # Return reversed path
+
+        closed_set.add(current_node.name)
+
+        for neighbor, cost in graph[current_node.name].items():
+            if neighbor in closed_set:
+                continue
+
+            tentative_g_cost = g_costs[current_node.name] + cost
+
+            if neighbor not in g_costs or tentative_g_cost < g_costs[neighbor]:
+                came_from[neighbor] = current_node
+                g_costs[neighbor] = tentative_g_cost
+                h_cost = heuristic(neighbor, goal)
+                neighbor_node = Node(neighbor, tentative_g_cost, h_cost)
+                if neighbor_node not in open_list:
+                    heapq.heappush(open_list, neighbor_node)
+
+    return None  # No path found
+
+# Define the graph as a dictionary
+graph = {
+    0: {1: 1, 2: 4},
+    1: {0: 1, 3: 2, 4: 5},
+    2: {0: 4, 4: 1},
+    3: {1: 2, 5: 3},
+    4: {1: 5, 2: 1, 5: 1},
+    5: {3: 3, 4: 1}
+}
+
+start_node = 0
+goal_node = 5
+
+# Find the shortest path using A*
+path = a_star(graph, start_node, goal_node)
+
+if path is not None:
+    print("Shortest path from node {} to node {}: {}".format(start_node, goal_node, path))
+else:
+    print("No path found from node {} to node {}.".format(start_node, goal_node))
+
+#Q1 == For Target String
+#Code:
+import random
+
+# Number of individuals in each generation
+POPULATION_SIZE = 100
+
+# Valid genes
+GENES = '''abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOP
+ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890, .-;:_!"#%&/()=?@${[]}'''
+
+# Target string to be generated (can change to experiment)
+TARGET = "Hello, Genetic Algorithm"
+
+class Individual:
+    '''
+    Class representing individual in population
+    '''
+    def __init__(self, chromosome):
+        self.chromosome = chromosome
+        self.fitness = self.cal_fitness()
+
+    @classmethod
+    def mutated_genes(cls):
+        '''
+        Create random genes for mutation
+        '''
+        global GENES
+        gene = random.choice(GENES)
+        return gene
+
+    @classmethod
+    def create_gnome(cls):
+        '''
+        Create chromosome or string of genes
+        '''
+        global TARGET
+        gnome_len = len(TARGET)
+        return [cls.mutated_genes() for _ in range(gnome_len)]
+
+    def mate(self, par2):
+        '''
+        Perform mating and produce new offspring
+        '''
+        child_chromosome = []
+        for gp1, gp2 in zip(self.chromosome, par2.chromosome):
+            # Random probability
+            prob = random.random()
+
+            # If prob is less than 0.45, insert gene from parent 1
+            if prob < 0.45:
+                child_chromosome.append(gp1)
+
+            # If prob is between 0.45 and 0.90, insert gene from parent 2
+            elif prob < 0.90:
+                child_chromosome.append(gp2)
+
+            # Otherwise insert random gene (mutate) for maintaining diversity
+            else:
+                child_chromosome.append(self.mutated_genes())
+
+        # Create new Individual (offspring) using generated chromosome for offspring
+        return Individual(child_chromosome)
+
+    def cal_fitness(self):
+        '''
+        Calculate fitness score, it is the number of characters in string
+        which differ from target string.
+        '''
+        global TARGET
+        fitness = 0
+        for gs, gt in zip(self.chromosome, TARGET):
+            if gs != gt:
+                fitness += 1
+        return fitness
+
+
+# Driver code for Target String
+def main_target_string():
+    global POPULATION_SIZE
+    # Current generation
+    generation = 1
+    found = False
+    population = []
+    # Create initial population
+    for _ in range(POPULATION_SIZE):
+        gnome = Individual.create_gnome()
+        population.append(Individual(gnome))
+
+    while not found:
+        # Sort the population in increasing order of fitness score
+        population = sorted(population, key=lambda x: x.fitness)
+        # If the individual with the lowest fitness score (0) is found, we reached the target string
+        if population[0].fitness == 0:
+            found = True
+            break
+        # Otherwise, generate new offspring for the next generation
+        new_generation = []
+        # Perform Elitism: 10% of fittest population goes to the next generation
+        s = int((10 * POPULATION_SIZE) / 100)
+        new_generation.extend(population[:s])
+        # From 90% of fittest population, individuals will mate to produce offspring
+        s = int((90 * POPULATION_SIZE) / 100)
+        for _ in range(s):
+            parent1 = random.choice(population[:50])
+            parent2 = random.choice(population[:50])
+            child = parent1.mate(parent2)
+            new_generation.append(child)
+
+        population = new_generation
+
+        print(f"Generation: {generation}\tString: {''.join(population[0].chromosome)}\tFitness: {population[0].fitness}")
+        generation += 1
+
+    print(f"Generation: {generation}\tString: {''.join(population[0].chromosome)}\tFitness: {population[0].fitness}")
+
+
+if __name__ == "__main__":
+    main_target_string()
+
+#Q2 == For N Queen Problem
+Code:
+import random
+
+# Define the N-Queens problem
+N = 8  # Size of the board and the number of queens
+
+# Class to represent an individual solution for the N-Queens problem
+class Individual:
+    def __init__(self, chromosome):
+        self.chromosome = chromosome
+        self.fitness = self.cal_fitness()
+
+    @classmethod
+    def create_gnome(cls):
+        """
+        Create a random solution (chromosome) where each queen is placed in a random row of each column
+        """
+        return random.sample(range(N), N)
+
+    def cal_fitness(self):
+        """
+        Calculate fitness by counting the number of conflicts between queens.
+        The fewer conflicts, the better the fitness.
+        """
+        conflicts = 0
+        for i in range(N):
+            for j in range(i + 1, N):
+                if self.chromosome[i] == self.chromosome[j] or \
+                   abs(self.chromosome[i] - self.chromosome[j]) == abs(i - j):
+                    conflicts += 1
+        return conflicts
+
+    def mate(self, par2):
+        """
+        Perform mating and produce new offspring.
+        """
+        child_chromosome = []
+        for gp1, gp2 in zip(self.chromosome, par2.chromosome):
+            prob = random.random()
+            if prob < 0.45:
+                child_chromosome.append(gp1)
+            elif prob < 0.90:
+                child_chromosome.append(gp2)
+            else:
+                child_chromosome.append(random.choice(range(N)))
+
+        return Individual(child_chromosome)
+
+
+# Driver code for N-Queens
+def main_n_queens():
+    global N
+    POPULATION_SIZE = 100
+    generations = 0
+    found = False
+    population = []
+
+    # Create initial population
+    for _ in range(POPULATION_SIZE):
+        chromosome = Individual.create_gnome()
+        population.append(Individual(chromosome))
+
+    while not found:
+        # Sort population based on fitness
+        population = sorted(population, key=lambda x: x.fitness)
+        if population[0].fitness == 0:
+            found = True
+            break
+
+        new_generation = []
+        s = int((10 * POPULATION_SIZE) / 100)
+        new_generation.extend(population[:s])  # Elitism: 10% fittest go to next generation
+        s = int((90 * POPULATION_SIZE) / 100)
+        for _ in range(s):
+            parent1 = random.choice(population[:50])
+            parent2 = random.choice(population[:50])
+            child = parent1.mate(parent2)
+            new_generation.append(child)
+
+        population = new_generation
+        generations += 1
+
+        print(f"Generation: {generations}\tFitness: {population[0].fitness}")
+
+    print(f"Solution found in Generation: {generations}\n{population[0].chromosome}")
+
+
+if __name__ == "__main__":
+    main_n_queens()
+
+#Q1:
+#Code:
+def evaluate(b):
+    for row in range(0, 3):
+        if b[row][0] == b[row][1] and b[row][1] == b[row][2]:
+            if b[row][0] == 'x':
+                return 10
+            elif b[row][0] == 'o':
+                return -10
+
+    for col in range(0, 3):
+        if b[0][col] == b[1][col] and b[1][col] == b[2][col]:
+            if b[0][col] == 'x':
+                return 10
+            elif b[0][col] == 'o':
+                return -10
+
+    if b[0][0] == b[1][1] and b[1][1] == b[2][2]:
+        if b[0][0] == 'x':
+            return 10
+        elif b[0][0] == 'o':
+            return -10
+
+    if b[0][2] == b[1][1] and b[1][1] == b[2][0]:
+        if b[0][2] == 'x':
+            return 10
+        elif b[0][2] == 'o':
+            return -10
+
+    return 0
+
+if __name__ == "__main__":
+    board = [['o', '_', 'x'],
+             ['o', 'x', 'x'],
+             ['o', '_', '_']]
+
+    value = evaluate(board)
+    print("The value of this board is", value)
+
+
+#Q2:
+#Code:
+def evaluate(b):
+    for row in range(0, 3):
+        if b[row][0] == b[row][1] and b[row][1] == b[row][2]:
+            if b[row][0] == 'x':
+                return 10
+            elif b[row][0] == 'o':
+                return -10
+
+    for col in range(0, 3):
+        if b[0][col] == b[1][col] and b[1][col] == b[2][col]:
+            if b[0][col] == 'x':
+                return 10
+            elif b[0][col] == 'o':
+                return -10
+
+    if b[0][0] == b[1][1] and b[1][1] == b[2][2]:
+        if b[0][0] == 'x':
+            return 10
+        elif b[0][0] == 'o':
+            return -10
+
+    if b[0][2] == b[1][1] and b[1][1] == b[2][0]:
+        if b[0][2] == 'x':
+            return 10
+        elif b[0][2] == 'o':
+            return -10
+
+    return 0
+
+if __name__ == "__main__":
+    board = [['o', 'x', 'o'],
+             ['o', 'x', 'x'],
+             ['x', 'o', 'o']]
+
+    value = evaluate(board)
+    print("The value of this board is", value)
+
+#Q3:
+#Code:
+def evaluate(b):
+    # Check rows for a win
+    for row in range(0, 4):
+        if b[row][0] == b[row][1] and b[row][1] == b[row][2]and b[row][2] == b[row][3]:
+            if b[row][0] == 'x':
+                return 10
+            elif b[row][0] == 'o':
+                return -10
+
+    # Check columns for a win
+    for col in range(0, 4):
+        if b[0][col] == b[1][col] and b[1][col] == b[2][col] and b[2][col] == b[3][col]:
+            if b[0][col] == 'x':
+                return 10
+            elif b[0][col] == 'o':
+                return -10
+
+    # Check main diagonal for a win
+    if b[0][0] == b[1][1] and b[1][1] == b[2][2] and b[2][2] == b[3][3]:
+        if b[0][0] == 'x':
+            return 10
+        elif b[0][0] == 'o':
+            return -10
+
+    # Check anti-diagonal for a win
+    if b[0][3] == b[1][2] and b[1][2] == b[2][1] and b[2][1] == b[3][0]:
+        if b[0][3] == 'x':
+            return 10
+        elif b[0][3] == 'o':
+            return -10
+
+    return 0
+
+if __name__ == "__main__":
+    board = [['x', 'x', 'o', 'x'],
+             ['x', 'x', 'x', 'o'],
+             ['x', 'o', 'x', 'o'],
+             ['x', 'o', 'o', 'x']]
+
+    value = evaluate(board)
+    print("The value of this board is", value)
+
+#Q4:
+#Code:
+def sum(a,b,c):
+    return a + b + c
+
+def board(xState , zState):
+
+    zero = 'X' if xState[0] else ('O' if zState[0] else 0)
+    one = 'X' if xState[1] else ('O' if zState[1] else 1)
+    two = 'X' if xState[2] else ('O' if zState[2] else 2)
+    three = 'X' if xState[3] else ('O' if zState[3] else 3)
+    four = 'X' if xState[4] else ('O' if zState[4] else 4)
+    five = 'X' if xState[5] else ('O' if zState[5] else 5)
+    six = 'X' if xState[6] else ('O' if zState[6] else 6)
+    seven = 'X' if xState[7] else ('O' if zState[7] else 7)
+    eight = 'X' if xState[8] else ('O' if zState[8] else 8)
+
+
+    print(f" {zero} | {one} | {two} ")
+    print(f"--|---|---")
+    print(f" {three} | {four} | {five } ")
+    print(f"--|---|---")
+    print(f" {six} | {seven} | {eight} ")
+
+
+def scenario(xState , zState):
+
+    wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
+
+    for win in wins:
+
+        if(sum(xState[win[0]] , xState[win[1]] , xState[win[2]] ) == 3 ):
+
+            print(" X won the match")
+            return 1
+
+        if(sum(zState[win[0]] , zState[win[1]] , zState[win[2]] ) == 3 ):
+
+            print(" O won the match")
+            return 0
+
+    return -1
+
+
+if __name__ == "__main__":
+
+    xState = [0,0,0,0,0,0,0,0,0]
+    zState = [0,0,0,0,0,0,0,0,0]
+    turn = 1
+
+    print("Welcome to Tic Tac Toe")
+
+    while(True):
+
+        board(xState , zState)
+
+        if(turn == 1):
+
+            print("X's chance ")
+            value = int(input("Please enter a value: "))
+            xState[value] = 1
+
+        else:
+             print("O's chance ")
+             value = int(input("Please enter a value: "))
+             zState[value] = 1
+
+        cwin = scenario(xState , zState)
+        if(cwin != -1):
+
+            print(" Match over ")
+            break
+
+        turn = 1 – turn
+
+
+#Q1:
+#Code:
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Step 1: Create DataFrame for fruit prices with UAE cities and new fruits
+data = {
+    'Fruits': ['Orange', 'Grapes', 'Pineapple'],
+    'Dubai': [80, 40, 60],
+    'Abu Dhabi': [100, 30, 90],
+    'Sharjah': [90, 50, 100]
+}
+df = pd.DataFrame(data)
+
+# Display data overview
+print("Data overview:")
+print(df.head())
+print("\nStatistics:")
+print(df.describe())
+
+# Plot bar graph for fruit prices
+df.set_index('Fruits').plot(kind='bar')
+plt.title("Fruit Prices in Different Cities of UAE")
+plt.ylabel("Price")
+plt.show()
+
+
+#Q2:
+#Code:
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Step 1: Create DataFrame with scores for different subjects
+scores_data = {
+    'Subject': ['Physics', 'Chemistry', 'Biology', 'Computer Science'],
+    'Score1': [78, 85, 90, 88],
+    'Score2': [82, 89, 76, 95],
+    'Score3': [80, 87, 84, 92]
+}
+scores_df = pd.DataFrame(scores_data)
+
+# Calculate average, max, and min scores for each subject
+scores_df['Average'] = scores_df[['Score1', 'Score2', 'Score3']].mean(axis=1)
+scores_df['Max'] = scores_df[['Score1', 'Score2', 'Score3']].max(axis=1)
+scores_df['Min'] = scores_df[['Score1', 'Score2', 'Score3']].min(axis=1)
+
+# Display Average, Max, and Min scores
+print("Average, Max, and Min scores for each subject:")
+print(scores_df[['Subject', 'Average', 'Max', 'Min']])
+
+# Plot histogram for score distribution
+scores_df[['Score1', 'Score2', 'Score3']].plot(kind='hist', bins=10, alpha=0.5)
+plt.title("Score Distribution")
+plt.xlabel("Scores")
+plt.show()
+
+# Plot bar graph for average scores
+scores_df.plot(x='Subject', y='Average', kind='bar', color='skyblue')
+plt.title("Average Scores by Subject")
+plt.ylabel("Average Score")
+plt.show()
+
+
+
+
+Code#1:
+
+# Importing necessary libraries
+import pandas as pd  # For handling and analyzing data
+import numpy as np  # For numerical operations
+from sklearn.model_selection import train_test_split  # For splitting the dataset
+from sklearn.neighbors import KNeighborsClassifier  # For KNN implementation using scikit-learn
+from sklearn.metrics import accuracy_score  # For calculating accuracy of models
+import matplotlib.pyplot as plt  # For visualizing results
+from scipy.stats import mode  # For finding the mode of neighbors in the custom KNN model
+
+# Custom KNN Classifier
+class K_Nearest_Neighbors_Classifier:
+    # Initialize the model with a specific value of k
+    def __init__(self, K):
+        self.K = K
+
+    # Train the model with training data
+    def fit(self, X_train, Y_train):
+        self.X_train = X_train  # Store training features
+        self.Y_train = Y_train  # Store training labels
+        self.m, self.n = X_train.shape  # Get the number of training samples and features
+
+    # Predict labels for the test dataset
+    def predict(self, X_test):
+        self.X_test = X_test  # Store test features
+        self.m_test, self.n = X_test.shape  # Get the number of test samples and features
+        Y_predict = np.zeros(self.m_test)  # Initialize an array to store predictions
+
+        # Loop through each test example
+        for i in range(self.m_test):
+            x = self.X_test[i]  # Get the current test sample
+            neighbors = self.find_neighbors(x)  # Find the k nearest neighbors
+            Y_predict[i] = mode(neighbors, keepdims=False)[0]  # Predict the most frequent class
+        return Y_predict
+
+    # Find the k nearest neighbors for a given test sample
+    def find_neighbors(self, x):
+        euclidean_distances = np.zeros(self.m)  # Array to store distances from all training samples
+
+        # Calculate the Euclidean distance between the test sample and all training samples
+        for i in range(self.m):
+            d = self.euclidean(x, self.X_train[i])  # Calculate distance
+            euclidean_distances[i] = d  # Store the distance
+
+        # Get the indices of training samples sorted by distance
+        inds = euclidean_distances.argsort()
+        Y_train_sorted = self.Y_train[inds]  # Sort training labels based on the sorted distances
+        return Y_train_sorted[:self.K]  # Return the labels of the k nearest neighbors
+
+    # Calculate the Euclidean distance between two points
+    def euclidean(self, x, x_train):
+        return np.sqrt(np.sum(np.square(x - x_train)))  # Square differences, sum them, and take the square root
+
+# Main function to execute the program
+def main():
+    # Load the dataset
+    df = pd.read_csv("/content/teleCust1000t.csv")  # Load data from CSV file
+
+    # Extract features (all columns except the last) and target (last column)
+    X = df.iloc[:, :-1].values  # Features
+    Y = df.iloc[:, -1].values  # Target labels
+
+    # Split the dataset into training (67%) and testing (33%) sets
+    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=1/3, random_state=0)
+
+    # Define different values of k to test
+    k_values = [1, 3, 5, 10]
+
+    # Initialize lists to store accuracy results
+    custom_model_accuracies = []
+    sklearn_model_accuracies = []
+
+    # Loop through each k value
+    for k in k_values:
+        # Custom KNN model
+        custom_model = K_Nearest_Neighbors_Classifier(K=k)  # Create custom KNN model with current k
+        custom_model.fit(X_train, Y_train)  # Train the custom model
+        Y_pred_custom = custom_model.predict(X_test)  # Predict labels for test data
+        accuracy_custom = accuracy_score(Y_test, Y_pred_custom) * 100  # Calculate accuracy
+        custom_model_accuracies.append(accuracy_custom)  # Store accuracy
+
+        # Scikit-learn KNN model
+        sklearn_model = KNeighborsClassifier(n_neighbors=k)  # Create scikit-learn KNN model with current k
+        sklearn_model.fit(X_train, Y_train)  # Train the scikit-learn model
+        Y_pred_sklearn = sklearn_model.predict(X_test)  # Predict labels for test data
+        accuracy_sklearn = accuracy_score(Y_test, Y_pred_sklearn) * 100  # Calculate accuracy
+        sklearn_model_accuracies.append(accuracy_sklearn)  # Store accuracy
+
+        # Print the accuracies for the current k value
+        print(f"Accuracy with k={k} (Custom Model): {accuracy_custom:.2f}%")
+        print(f"Accuracy with k={k} (Scikit-Learn): {accuracy_sklearn:.2f}%")
+
+    # Visualization of accuracies for different k values
+    plt.figure(figsize=(10, 6))
+    plt.plot(k_values, custom_model_accuracies, label="Custom Model", marker='o', color='blue')  # Custom model accuracy
+    plt.plot(k_values, sklearn_model_accuracies, label="Scikit-Learn Model", marker='s', color='orange')  # Scikit-learn model accuracy
+    plt.title("Comparison of KNN Models with Varying k Values", fontsize=16)
+    plt.xlabel("k (Number of Neighbors)", fontsize=14)
+    plt.ylabel("Accuracy (%)", fontsize=14)
+    plt.legend(fontsize=12)  # Add legend for clarity
+    plt.grid(True)  # Add grid for better readability
+    plt.show()  # Display the plot
+
+# Execute the main function when the script is run
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+Code#2:
+
+# Importing necessary libraries
+import numpy as np  # For numerical computations
+import pandas as pd  # For handling datasets
+import matplotlib.pyplot as plt  # For data visualization
+from sklearn.datasets import make_blobs  # To generate synthetic datasets
+from sklearn.neighbors import KNeighborsClassifier  # KNN implementation from sklearn
+from sklearn.model_selection import train_test_split  # For splitting dataset
+from sklearn.metrics import accuracy_score  # To calculate model accuracy
+
+# Creating a synthetic dataset with 500 samples, 2 features, 4 classes, and controlled cluster distribution
+X, y = make_blobs(n_samples=500, n_features=2, centers=4, cluster_std=1.5, random_state=4)
+
+# Visualizing the generated dataset
+plt.figure(figsize=(10, 10))  # Setting figure size for better visualization
+plt.scatter(X[:, 0], X[:, 1], c=y, s=100, edgecolors='black')  # Scatter plot of data points
+plt.title("Dataset Visualization", fontsize=16)  # Adding title to the plot
+plt.show()  # Displaying the plot
+
+# Splitting the dataset into training (75%) and testing (25%) sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
+
+# Creating a dictionary of KNN models for different values of k
+knn_models = {
+    'k=1': KNeighborsClassifier(n_neighbors=1),  # KNN model with k=1
+    'k=3': KNeighborsClassifier(n_neighbors=3),  # KNN model with k=3
+    'k=5': KNeighborsClassifier(n_neighbors=5),  # KNN model with k=5
+    'k=10': KNeighborsClassifier(n_neighbors=10)  # KNN model with k=10
+}
+
+# Training and evaluating each model
+accuracy_results = {}  # Dictionary to store accuracy of each model
+for k, model in knn_models.items():  # Looping through each model
+    model.fit(X_train, y_train)  # Training the KNN model on the training set
+    y_pred = model.predict(X_test)  # Making predictions on the test set
+    accuracy = accuracy_score(y_test, y_pred) * 100  # Calculating accuracy as a percentage
+    accuracy_results[k] = accuracy  # Storing accuracy in the dictionary
+    print(f"Accuracy with {k}: {accuracy:.2f}%")  # Printing accuracy for each model
+
+# Visualizing predictions for k=1 and k=5
+plt.figure(figsize=(15, 5))  # Setting figure size for visualization
+subplot_index = 1  # Initializing subplot index for sequential plotting
+for k, model in knn_models.items():  # Looping through models
+    if k in ['k=1', 'k=5']:  # Only visualize results for k=1 and k=5
+        y_pred = model.predict(X_test)  # Making predictions on the test set
+        plt.subplot(1, 2, subplot_index)  # Creating subplot (1 row, 2 columns, current index)
+        plt.scatter(X_test[:, 0], X_test[:, 1], c=y_pred, marker='*', s=100, edgecolors='black')  # Scatter plot of predictions
+        plt.title(f"Predicted values with {k}", fontsize=20)  # Adding title to the plot
+        subplot_index += 1  # Incrementing subplot index for next plot
+
+plt.tight_layout()  # Adjusting spacing between plots for better readability
+plt.show()  # Displaying the plots
+
+# Comparing and printing accuracy results for all models
+print("\nAccuracy comparison:")
+for k, accuracy in accuracy_results.items():  # Looping through accuracy dictionary
+    print(f"{k}: {accuracy:.2f}%")  # Printing accuracy for each model
+
+
